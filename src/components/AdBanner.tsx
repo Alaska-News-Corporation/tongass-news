@@ -4,6 +4,7 @@ import adMining from '@/assets/ad-mining.jpg';
 import adChronicle from '@/assets/ad-chronicle.jpg';
 import adListings from '@/assets/ad-listings.jpg';
 import adConsulting from '@/assets/ad-consulting.jpg';
+import adBoats from '@/assets/ad-boats.jpg';
 
 interface AdBannerProps {
   variant: 'fires' | 'consulting' | 'boats' | 'chronicle' | 'gold' | 'mining' | 'listings';
@@ -37,12 +38,12 @@ const adContent = {
     title: 'Alaskan Boats',
     subtitle: 'Your source for quality marine vessels',
     cta: 'Browse Listings',
-    icon: '⛵',
-    image: null,
-    bgClass: 'bg-gradient-to-r from-sky-950 via-blue-900 to-sky-950',
-    textClass: 'text-sky-100',
-    subtitleClass: 'text-sky-200/70',
-    ctaClass: 'text-sky-200 hover:text-white',
+    icon: null,
+    image: adBoats,
+    bgClass: 'bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900',
+    textClass: 'text-slate-100',
+    subtitleClass: 'text-slate-300/80',
+    ctaClass: 'text-slate-200 hover:text-white',
   },
   chronicle: {
     title: 'The Anchorage Chronicle',

@@ -26,11 +26,11 @@ const Index = () => {
       {/* Hero */}
       <HeroSection />
       
+      {/* Regional Weather - moved up */}
+      <WeatherSection />
+      
       {/* Quote Section */}
       <QuoteCarousel />
-      
-      {/* Seasonal Info */}
-      <SeasonalHighlights />
       
       {/* Ad: Alaska Fires */}
       <AdBanner variant="fires" href="https://alaskafires.com" />
@@ -38,11 +38,11 @@ const Index = () => {
       {/* Info Ticker */}
       <InfoTicker />
       
-      {/* Weather Section */}
-      <WeatherSection />
-      
       {/* Tide Chart */}
       <TideChart />
+      
+      {/* Daylight Tracker - moved under tide */}
+      <SeasonalHighlights />
       
       {/* Ad: Consulting */}
       <AdBanner variant="consulting" href="https://alaskaconsultinggroup.com" />

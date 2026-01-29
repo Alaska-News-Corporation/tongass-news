@@ -46,16 +46,16 @@ const OutdoorRecreation = () => {
       <div className="container-news">
         <h2 className="font-headline text-2xl font-bold mb-6">Outdoor Recreation</h2>
 
-        {/* Avalanche Advisory */}
-        <Card className="card-news p-4 mb-6 border-warning/50 bg-warning/5">
+        {/* Avalanche Advisory - RED styling */}
+        <Card className="card-news p-4 mb-6 border-destructive/50 bg-destructive/10">
           <div className="flex items-start gap-3">
-            <div className="p-2 bg-warning/20 rounded-lg shrink-0">
-              <Mountain className="h-5 w-5 text-warning" />
+            <div className="p-2 bg-destructive/20 rounded-lg shrink-0">
+              <Mountain className="h-5 w-5 text-destructive" />
             </div>
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
-                <h3 className="font-semibold">Avalanche Advisory</h3>
-                <span className="px-2 py-0.5 text-xs font-medium bg-warning text-warning-foreground rounded">
+                <h3 className="font-semibold text-destructive">Avalanche Advisory</h3>
+                <span className="px-2 py-0.5 text-xs font-medium bg-destructive text-destructive-foreground rounded">
                   Level {avalancheInfo.level}: {avalancheInfo.danger}
                 </span>
               </div>
