@@ -23,13 +23,13 @@ const HeroSection = () => {
       <div className="relative z-10 flex-1 flex items-end pb-10">
         <div className="container-news">
           <div className="max-w-3xl">
-            <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-foreground mb-4">
+            <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-white mb-4 drop-shadow-lg">
               {featuredStory.title}
             </h1>
-            <p className="text-lg text-foreground/80 mb-4 max-w-2xl">
+            <p className="text-lg text-white/90 mb-4 max-w-2xl drop-shadow-md">
               {featuredStory.excerpt}
             </p>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-4 text-sm text-white/80 drop-shadow">
               <span>Tongass News</span>
               <span>•</span>
               <span>{featuredStory.date}</span>

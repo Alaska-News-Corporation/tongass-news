@@ -14,16 +14,16 @@ const WeatherStrip = () => {
         <div className="flex items-center justify-between overflow-x-auto no-scrollbar gap-4 sm:gap-6">
           {locations.map((loc) => (
             <div key={loc.name} className="flex items-center gap-3 text-xs whitespace-nowrap shrink-0">
-              <span className="font-medium text-foreground">{loc.name}</span>
-              <div className="flex items-center gap-1 text-muted-foreground">
-                <Thermometer className="h-3 w-3 text-glacier" />
+              <span className="font-semibold text-foreground">{loc.name}</span>
+              <div className="flex items-center gap-1 text-foreground/80">
+                <Thermometer className="h-3 w-3 text-primary" />
                 <span>{loc.temp}°F</span>
               </div>
-              <div className="flex items-center gap-1 text-muted-foreground">
+              <div className="flex items-center gap-1 text-foreground/70">
                 <Cloud className="h-3 w-3" />
                 <span>{loc.condition}</span>
               </div>
-              <div className="hidden sm:flex items-center gap-1 text-muted-foreground">
+              <div className="hidden sm:flex items-center gap-1 text-foreground/70">
                 <Wind className="h-3 w-3" />
                 <span>{loc.wind} mph</span>
               </div>

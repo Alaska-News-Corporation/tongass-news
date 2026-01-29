@@ -31,7 +31,7 @@ const LocalSpotlight = () => {
       case 'Business':
         return 'text-amber';
       case 'Hero':
-        return 'text-coral';
+        return 'text-destructive';
       case 'Milestone':
         return 'text-glacier';
       default:
