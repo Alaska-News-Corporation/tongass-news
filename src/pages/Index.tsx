@@ -26,7 +26,10 @@ const Index = () => {
       {/* Hero */}
       <HeroSection />
       
-      {/* Regional Weather - moved up */}
+      {/* Latest News - moved under hero */}
+      <LatestNews />
+      
+      {/* Regional Weather */}
       <WeatherSection />
       
       {/* Quote Section */}
@@ -58,9 +61,6 @@ const Index = () => {
       
       {/* Ad: Anchorage Chronicle */}
       <AdBanner variant="chronicle" href="https://anchoragechronicle.com" />
-      
-      {/* Latest News */}
-      <LatestNews />
       
       {/* Ad: Gold News */}
       <AdBanner variant="gold" href="https://alaskagoldnews.com" />
