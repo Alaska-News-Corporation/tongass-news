@@ -47,7 +47,7 @@ const AlertTicker = () => {
   const getSeverityClass = (severity: string) => {
     switch (severity) {
       case 'critical':
-        return 'text-coral';
+        return 'text-destructive';
       case 'warning':
         return 'text-amber';
       default:
@@ -58,7 +58,7 @@ const AlertTicker = () => {
   if (displayAlerts.length === 0) return null;
 
   return (
-    <div className="bg-navy-medium border-b border-border/30 overflow-hidden py-2">
+    <div className="bg-secondary border-b border-border/30 overflow-hidden py-2">
       <div className="relative">
         <div className="flex animate-ticker whitespace-nowrap">
           {[...displayAlerts, ...displayAlerts].map((alert, index) => (
@@ -70,7 +70,7 @@ const AlertTicker = () => {
               <span className="font-medium uppercase text-xs tracking-wide">
                 {alert.severity === 'critical' ? 'ALERT' : alert.severity === 'warning' ? 'ADVISORY' : 'INFO'}
               </span>
-              <span className="text-foreground/90">{alert.message}</span>
+              <span className="text-foreground">{alert.message}</span>
               <span className="mx-4 text-muted-foreground">•</span>
             </div>
           ))}

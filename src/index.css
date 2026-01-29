@@ -32,12 +32,12 @@
     --accent: 192 60% 45%;
     --accent-foreground: 210 40% 96%;
 
-    /* Coral/amber for alerts */
-    --destructive: 15 85% 55%;
-    --destructive-foreground: 210 40% 98%;
+    /* Pure red for alerts - NO orange */
+    --destructive: 0 85% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Warning amber */
-    --warning: 38 92% 50%;
+    /* Warning - pure yellow, not orange */
+    --warning: 48 96% 50%;
     --warning-foreground: 222 47% 11%;
 
     /* Success/info glacier */
@@ -59,17 +59,20 @@
     --glacier: 192 70% 51%;
     --glacier-glow: 192 80% 60%;
     --glacier-muted: 192 40% 35%;
-    --coral: 15 85% 55%;
-    --coral-muted: 15 60% 45%;
-    --amber: 38 92% 50%;
+    
+    /* Pure red - no orange/coral */
+    --alert-red: 0 85% 50%;
+    --alert-red-muted: 0 70% 40%;
+    
+    /* Amber for gold/highlights only */
+    --amber: 48 96% 50%;
     --gold: 45 85% 55%;
 
-    /* Ad sponsor palettes */
-    --fire-orange: 25 95% 53%;
+    /* Ad sponsor palettes - removed oranges */
     --fire-red: 0 80% 50%;
     --corporate-blue: 210 60% 40%;
     --maritime-blue: 200 70% 45%;
-    --brick-red: 5 65% 45%;
+    --brick-red: 0 65% 40%;
     --mining-gold: 45 80% 45%;
 
     /* Sidebar (not used but required) */
@@ -88,7 +91,7 @@
   }
 
   .light {
-    --background: 210 40% 98%;
+    --background: 210 20% 98%;
     --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
@@ -97,52 +100,56 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 192 70% 40%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 192 70% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 94%;
+    --secondary: 210 20% 94%;
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 94%;
-    --muted-foreground: 215 20% 45%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 20% 40%;
 
-    --accent: 192 60% 40%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 192 60% 35%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 15 85% 55%;
-    --destructive-foreground: 210 40% 98%;
+    /* Pure red in light mode too */
+    --destructive: 0 85% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --warning: 38 92% 50%;
+    --warning: 48 96% 45%;
     --warning-foreground: 222 47% 11%;
 
-    --info: 192 70% 45%;
-    --info-foreground: 210 40% 98%;
+    --info: 192 70% 35%;
+    --info-foreground: 0 0% 100%;
 
-    --border: 214 32% 85%;
-    --input: 214 32% 85%;
-    --ring: 192 70% 40%;
+    --border: 214 32% 82%;
+    --input: 214 32% 82%;
+    --ring: 192 70% 35%;
 
-    --navy-deep: 222 47% 11%;
-    --navy-dark: 222 47% 15%;
-    --navy-medium: 222 47% 20%;
-    --slate-dark: 215 25% 30%;
-    --slate-medium: 215 20% 45%;
-    --glacier: 192 70% 40%;
-    --glacier-glow: 192 80% 50%;
-    --glacier-muted: 192 40% 45%;
-    --coral: 15 85% 50%;
-    --coral-muted: 15 60% 55%;
-    --amber: 38 92% 50%;
-    --gold: 45 85% 50%;
+    --navy-deep: 222 47% 15%;
+    --navy-dark: 222 47% 20%;
+    --navy-medium: 222 47% 25%;
+    --slate-dark: 215 25% 35%;
+    --slate-medium: 215 20% 50%;
+    --glacier: 192 70% 35%;
+    --glacier-glow: 192 80% 45%;
+    --glacier-muted: 192 40% 50%;
+    
+    /* Pure red in light mode */
+    --alert-red: 0 85% 45%;
+    --alert-red-muted: 0 70% 50%;
+    
+    --amber: 48 96% 45%;
+    --gold: 45 85% 45%;
 
-    --sidebar-background: 210 40% 98%;
+    --sidebar-background: 210 20% 98%;
     --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 192 70% 40%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 210 40% 94%;
+    --sidebar-primary: 192 70% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 94%;
     --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 214 32% 85%;
-    --sidebar-ring: 192 70% 40%;
+    --sidebar-border: 214 32% 82%;
+    --sidebar-ring: 192 70% 35%;
   }
 }
 
@@ -241,10 +248,10 @@
     @apply bg-destructive/10 text-destructive border-destructive/30;
   }
 
-  /* Sponsor-specific palettes */
+  /* Sponsor-specific palettes - NO ORANGE anywhere */
   .ad-fires {
-    background: linear-gradient(90deg, hsl(0 80% 15%) 0%, hsl(25 95% 20%) 50%, hsl(0 80% 15%) 100%);
-    @apply text-orange-100;
+    background: linear-gradient(90deg, hsl(0 70% 15%) 0%, hsl(0 80% 25%) 50%, hsl(0 70% 15%) 100%);
+    @apply text-red-100;
   }
 
   .ad-consulting {
@@ -258,7 +265,7 @@
   }
 
   .ad-chronicle {
-    background: linear-gradient(90deg, hsl(5 50% 15%) 0%, hsl(5 65% 30%) 50%, hsl(5 50% 15%) 100%);
+    background: linear-gradient(90deg, hsl(0 50% 15%) 0%, hsl(0 65% 30%) 50%, hsl(0 50% 15%) 100%);
     @apply text-red-100;
   }
 
@@ -268,8 +275,8 @@
   }
 
   .ad-mining {
-    background: linear-gradient(90deg, hsl(30 30% 12%) 0%, hsl(30 40% 25%) 50%, hsl(30 30% 12%) 100%);
-    @apply text-amber-100;
+    background: linear-gradient(90deg, hsl(220 20% 12%) 0%, hsl(220 30% 25%) 50%, hsl(220 20% 12%) 100%);
+    @apply text-slate-100;
   }
 
   .ad-listings {
@@ -282,14 +289,14 @@
     @apply bg-navy-dark/80 backdrop-blur-md;
   }
 
-  /* Stats bar styling */
+  /* Stats bar styling - adapt to theme */
   .stats-bar {
-    @apply bg-navy-deep border-b border-border/50;
+    @apply bg-secondary border-b border-border/50;
   }
 
-  /* Weather strip */
+  /* Weather strip - adapt to theme */
   .weather-strip {
-    @apply bg-secondary/50 border-b border-border/30;
+    @apply bg-muted/50 border-b border-border/30;
   }
 }
 
@@ -310,11 +317,11 @@
   .bg-navy-dark { background-color: hsl(var(--navy-dark)); }
   .bg-navy-medium { background-color: hsl(var(--navy-medium)); }
   .bg-glacier { background-color: hsl(var(--glacier)); }
-  .bg-coral { background-color: hsl(var(--coral)); }
+  .bg-alert-red { background-color: hsl(var(--alert-red)); }
   .bg-amber { background-color: hsl(var(--amber)); }
 
   .text-glacier { color: hsl(var(--glacier)); }
-  .text-coral { color: hsl(var(--coral)); }
+  .text-alert-red { color: hsl(var(--alert-red)); }
   .text-amber { color: hsl(var(--amber)); }
   .text-gold { color: hsl(var(--gold)); }
 
@@ -325,8 +332,8 @@
     box-shadow: 0 0 20px hsl(var(--glacier) / 0.3);
   }
 
-  .glow-coral {
-    box-shadow: 0 0 20px hsl(var(--coral) / 0.3);
+  .glow-red {
+    box-shadow: 0 0 20px hsl(var(--alert-red) / 0.3);
   }
 
   /* Hide scrollbar */

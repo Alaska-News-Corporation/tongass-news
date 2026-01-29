@@ -35,17 +35,17 @@ const StatsBar = () => {
 
   return (
     <div className="stats-bar py-2">
-      <div className="container-news flex items-center justify-between text-xs text-muted-foreground">
+      <div className="container-news flex items-center justify-between text-xs">
         <div className="flex items-center gap-2">
-          <Clock className="h-3 w-3 text-glacier" />
-          <span className="font-medium">{formatAlaskaTime(currentTime)}</span>
-          <span className="text-muted-foreground/60">AKST</span>
+          <Clock className="h-3 w-3 text-primary" />
+          <span className="font-medium text-foreground">{formatAlaskaTime(currentTime)}</span>
+          <span className="text-muted-foreground">AKST</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-2 w-2 rounded-full bg-glacier animate-pulse-glow" />
-          <Users className="h-3 w-3 text-glacier" />
-          <span className="font-medium">{readerCount.toLocaleString()}</span>
-          <span className="text-muted-foreground/60">readers online</span>
+          <div className="h-2 w-2 rounded-full bg-primary animate-pulse-glow" />
+          <Users className="h-3 w-3 text-primary" />
+          <span className="font-medium text-foreground">{readerCount.toLocaleString()}</span>
+          <span className="text-muted-foreground">readers online</span>
         </div>
       </div>
     </div>
