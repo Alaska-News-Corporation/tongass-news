@@ -1,4 +1,4 @@
-import tongassLogo from '@/assets/tongass-news-logo.png';
+import tongassLogo from '@/assets/tongass-news-logo.jpg';
 import { Mail, ExternalLink } from 'lucide-react';
 
 const Footer = () => {
@@ -17,7 +17,7 @@ const Footer = () => {
             <img
               src={tongassLogo}
               alt="Tongass News"
-              className="h-14 w-auto shrink-0"
+              className="h-20 w-20 rounded-lg object-cover shrink-0"
             />
             <p className="text-sm text-muted-foreground max-w-md">
               Tongass News serves Southeast Alaska's Inside Passage communities including 

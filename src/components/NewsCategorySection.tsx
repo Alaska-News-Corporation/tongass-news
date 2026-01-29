@@ -1,5 +1,6 @@
-import { Anchor, Trees, Users, Microscope, Mountain, TrendingUp } from 'lucide-react';
+import { Anchor, Trees, Users, Microscope, Mountain, TrendingUp, Fish, CloudRain, MapPin, Compass } from 'lucide-react';
 import NewsCard from '@/components/NewsCard';
+import { Card } from '@/components/ui/card';
 
 interface NewsArticle {
   id: string;
@@ -20,49 +21,78 @@ interface NewsCategorySectionProps {
 
 const getCategoryIcon = (category: string) => {
   const icons: Record<string, React.ReactNode> = {
-    Wildlife: <Trees className="h-5 w-5" />,
-    Maritime: <Anchor className="h-5 w-5" />,
-    Community: <Users className="h-5 w-5" />,
-    Science: <Microscope className="h-5 w-5" />,
-    Outdoor: <Mountain className="h-5 w-5" />,
-    Economy: <TrendingUp className="h-5 w-5" />,
+    Wildlife: <Trees className="h-4 w-4" />,
+    Maritime: <Anchor className="h-4 w-4" />,
+    Community: <Users className="h-4 w-4" />,
+    Science: <Microscope className="h-4 w-4" />,
+    Outdoor: <Mountain className="h-4 w-4" />,
+    Economy: <TrendingUp className="h-4 w-4" />,
+    Fishing: <Fish className="h-4 w-4" />,
+    Weather: <CloudRain className="h-4 w-4" />,
+    Local: <MapPin className="h-4 w-4" />,
+    Recreation: <Compass className="h-4 w-4" />,
   };
-  return icons[category] || <Trees className="h-5 w-5" />;
+  return icons[category] || <Trees className="h-4 w-4" />;
 };
 
 const getCategoryDescription = (category: string) => {
   const descriptions: Record<string, string> = {
-    Wildlife: 'Wildlife & Nature',
-    Maritime: 'Maritime & Fishing',
-    Community: 'Community & Culture',
-    Science: 'Science & Research',
-    Outdoor: 'Outdoor Recreation',
-    Economy: 'Economy & Business',
+    Wildlife: 'Wildlife',
+    Maritime: 'Maritime',
+    Community: 'Community',
+    Science: 'Science',
+    Outdoor: 'Outdoor',
+    Economy: 'Business',
+    Fishing: 'Fishing',
+    Weather: 'Weather',
+    Local: 'Local',
+    Recreation: 'Recreation',
   };
   return descriptions[category] || category;
 };
 
 const NewsCategorySection = ({ category, articles, expandedId, onToggleExpand }: NewsCategorySectionProps) => {
+  // Show first article as featured, rest as compact list
+  const featuredArticle = articles[0];
+  const listArticles = articles.slice(1);
+
   return (
-    <div>
-      <div className="flex items-center gap-2 mb-4 text-muted-foreground">
-        {getCategoryIcon(category)}
-        <h3 className="font-headline text-lg font-semibold text-foreground">
+    <Card className="card-news overflow-hidden">
+      {/* Category Header */}
+      <div className="flex items-center gap-2 px-3 py-2 bg-muted/30 border-b border-border/50">
+        <span className="text-glacier">{getCategoryIcon(category)}</span>
+        <h3 className="font-headline text-sm font-semibold">
           {getCategoryDescription(category)}
         </h3>
-        <div className="flex-1 h-px bg-border ml-2" />
+        <span className="text-xs text-muted-foreground ml-auto">{articles.length} stories</span>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {articles.map((article) => (
+
+      <div className="p-3">
+        {/* Featured article */}
+        {featuredArticle && (
           <NewsCard
-            key={article.id}
-            article={article}
-            isExpanded={expandedId === article.id}
-            onToggleExpand={() => onToggleExpand(article.id)}
+            article={featuredArticle}
+            isExpanded={expandedId === featuredArticle.id}
+            onToggleExpand={() => onToggleExpand(featuredArticle.id)}
           />
-        ))}
+        )}
+
+        {/* Compact list for remaining articles */}
+        {listArticles.length > 0 && (
+          <div className="mt-3 pt-3 border-t border-border/50">
+            {listArticles.map((article) => (
+              <NewsCard
+                key={article.id}
+                article={article}
+                isExpanded={expandedId === article.id}
+                onToggleExpand={() => onToggleExpand(article.id)}
+                compact
+              />
+            ))}
+          </div>
+        )}
       </div>
-    </div>
+    </Card>
   );
 };
 
